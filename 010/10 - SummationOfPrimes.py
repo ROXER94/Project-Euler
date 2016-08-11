@@ -12,8 +12,4 @@ def isPrime(n):
             return False
     return True
 
-sum = 2
-for i in range(3,2000000,2):
-	if isPrime(i):
-		sum += i
-print(sum)
+print(sum([n for n in range(3,2000000,2) if isPrime(n)])+2)
