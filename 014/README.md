@@ -13,5 +13,3 @@ The Collatz Sequence is defined for the set of positive integers:
       13 produces a Collatz length of 10
 
 Calculates the number that produces the longest Collatz sequence under one million
-
-test
