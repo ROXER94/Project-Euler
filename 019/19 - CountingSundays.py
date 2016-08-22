@@ -1,4 +1,4 @@
-# Calculates the number of Sundays that fell on the first of the month between January 1st, 1901 and December 31, 2000
+# Calculates the number of Sundays that fell on the first of the month between January 1st, 1901 and December 31st, 2000
 
 from datetime import date
 
