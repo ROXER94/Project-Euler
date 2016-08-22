@@ -1,4 +1,4 @@
-# Calculates the prime below 1000000 that can be written as the sum of the most consecutive primes
+# Calculates the prime below 1,000,000 that can be written as the sum of the most consecutive primes
 
 from itertools import accumulate
 
