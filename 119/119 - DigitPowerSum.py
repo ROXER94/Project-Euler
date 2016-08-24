@@ -18,4 +18,4 @@ for base in range(3,70):
 		if digitpowersum(value):
 			array.append(value)
 
-print(sorted(list(set(array)))[29])#248155780267521
+print(sorted(list(set(array)))[29])
