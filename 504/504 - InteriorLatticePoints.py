@@ -17,7 +17,7 @@ for a in range(1,Range+1):
 				array.append([a,b,-c,-d])
 
 # Determine if a number is square
-def is_square(integer):
+def isSquare(integer):
     root = sqrt(integer)
     if int(root + 0.5) ** 2 == integer: 
         return True
@@ -68,6 +68,6 @@ for i in array:
 	EXTERIOR = exterior(i[0],i[1],i[2],i[3])
 	# Pick's Theorem
 	INTERIOR = AREA - EXTERIOR/2 + 1
-	if is_square(INTERIOR):
+	if isSquare(INTERIOR):
 		count += 1
 print(count)
