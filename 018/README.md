@@ -1,4 +1,4 @@
-# MaximumPath
+# MaximumPathSum
 
 From [Project Euler: Problem 18](https://projecteuler.net/problem=18)
 
