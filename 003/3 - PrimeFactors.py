@@ -1,4 +1,4 @@
-# Calculates the largest prime factor of 600851475143
+# Calculates the largest prime factor of 600,851,475,143
 
 def prime_factors(n):
     i = 2
