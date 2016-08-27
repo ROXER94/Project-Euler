@@ -15,14 +15,10 @@ for i in range(convergent-2):
 	else:
 		array.append(1)
 
-def infinite(array):
+def continuedFraction(array):
 	if len(array) != 2:
-		return array[0] + Fraction(1,infinite(array[1:]))
+		return array[0] + Fraction(1,continuedFraction(array[1:]))
 	else:
 		return array[0] + Fraction(1,array[1])
 
-sum = 0
-
-for i in str(infinite(array).numerator):
-	sum += int(i)
-print(sum)
+print(sum(int(i) for i in str(continuedFraction(array).numerator)))
