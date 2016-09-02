@@ -2,7 +2,7 @@
 
 Range = 4
 
-from math import sin, acos, sqrt
+from math import sqrt
 from fractions import gcd
 
 array = []
