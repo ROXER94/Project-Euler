@@ -33,8 +33,4 @@ for i in range(2,n):
 	for j in range(1,i):
 		array.append(Pascal(i,j))
 
-sum = 1
-for i in list(set(array)):
-	if isSquarefree(i):
-		sum += i
-print(sum)
+print(sum(i for i in list(set(array)) if isSquarefree(i)) + 1)
