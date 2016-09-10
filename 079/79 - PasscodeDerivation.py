@@ -1,4 +1,4 @@
-# Calculates the shortest possible secret passcode using the keylog information in the text fil
+# Calculates the shortest possible secret passcode using the keylog information in the text file
 
 from itertools import permutations
 
