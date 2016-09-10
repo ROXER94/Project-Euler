@@ -12,7 +12,6 @@ for line in file:
 		array.append(i)
 
 for i in passcodes:
-	code = True
 	for j in array:
 		if i.index(j[0]) < i.index(j[1]) < i.index(j[2]):
 			if j == array[-1]:
