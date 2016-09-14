@@ -1,6 +1,6 @@
 # Calculates the number of quadrilaterals that contain a square number of lattice points for a given range of coordinates
 
-Range = 4
+Range = 100
 
 from math import sqrt
 from fractions import gcd
