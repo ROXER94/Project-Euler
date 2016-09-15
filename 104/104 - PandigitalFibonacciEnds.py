@@ -4,7 +4,7 @@ cache = {1:1,2:1}
 
 def fibonacci(n):
 	if n not in cache:
-		cache[n] = fib(n-1) + fib(n-2)
+		cache[n] = fibonacci(n-1) + fibonacci(n-2)
 	return cache[n]
 
 def isPandigital(n):
