@@ -1,7 +1,7 @@
 # Calculates the minimum difference of two pentagonal numbers whose sum and difference are pentagonal
 
 def pentagonal(n):
-	return int(n * (3*n -1) / 2)
+	return int(n * (3*n - 1) / 2)
 
 pentagon = [pentagonal(n) for n in range(1,2500)]
 
