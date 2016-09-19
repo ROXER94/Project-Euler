@@ -24,6 +24,19 @@ def RPN(array):
         else:
             newarray.append(i)
     return newarray[0]
+    
+def f(array):
+	newarray = []
+	for i in list(permutations(array)):
+		try:
+			value = RPN(i)
+			if value%1==0 and value > 0:
+				newarray.append(value)
+		except IndexError:
+			continue
+		except ZeroDivisionError:
+			continue
+	return newarray
 
 consecutive = 0
 n = 10
@@ -34,126 +47,22 @@ for a in range(1,n):
 				array = []
 				array.append(RPN([a,b,c,d,"+","+","+"]))
 				array.append(RPN([a,b,c,d,"*","*","*"]))
-				for i in list(permutations([a,b,c,d,"-","+","+"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"*","+","+"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"/","+","+"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"-","*","*"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"+","*","*"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"/","*","*"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"+","-","-"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"*","-","-"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"/","-","-"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-					except ZeroDivisionError:
-						continue
-				for i in list(permutations([a,b,c,d,"-","/","/"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-					except ZeroDivisionError:
-						continue
-				for i in list(permutations([a,b,c,d,"*","/","/"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"+","/","/"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"-","*","+"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"-","/","+"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-					except ZeroDivisionError:
-						continue
-				for i in list(permutations([a,b,c,d,"+","*","/"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-				for i in list(permutations([a,b,c,d,"-","*","/"])):
-					try:
-						value = RPN(i)
-						if value%1==0 and value > 0:
-							array.append(value)
-					except IndexError:
-						continue
-					except ZeroDivisionError:
-						continue
+				array += f([a,b,c,d,"-","+","+"])
+				array += f([a,b,c,d,"*","+","+"])
+				array += f([a,b,c,d,"/","+","+"])
+				array += f([a,b,c,d,"-","*","*"])
+				array += f([a,b,c,d,"+","*","*"])
+				array += f([a,b,c,d,"/","*","*"])
+				array += f([a,b,c,d,"+","-","-"])
+				array += f([a,b,c,d,"*","-","-"])
+				array += f([a,b,c,d,"/","-","-"])
+				array += f([a,b,c,d,"-","/","/"])
+				array += f([a,b,c,d,"*","/","/"])
+				array += f([a,b,c,d,"+","/","/"])
+				array += f([a,b,c,d,"-","*","+"])
+				array += f([a,b,c,d,"-","/","+"])
+				array += f([a,b,c,d,"+","*","/"])
+				array += f([a,b,c,d,"-","*","/"])
 				array = sorted(list(set(array)))
 				count = 0
 				for i in range(len(array)):
