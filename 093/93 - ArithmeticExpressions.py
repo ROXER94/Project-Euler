@@ -1,4 +1,4 @@
-# Calculates the set of four distinct digits for which the longest set of consecutive positive integers from 1 to n can be obtained
+# Calculates the set of four distinct digits for which the longest set of consecutive positive integers from 1 to n can be obtained using arithmetic operators
 
 from itertools import permutations
 
