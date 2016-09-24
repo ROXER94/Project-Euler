@@ -2,7 +2,7 @@
 
 from math import log
 
-N = 100
+N = 10000000
 maximum = N // 2
 primes = []
 sieve = [True] * maximum
