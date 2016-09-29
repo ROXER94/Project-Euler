@@ -11,4 +11,4 @@ def lcm(a, b):
 def lcmm(*args):
     return reduce(lcm, args)
 
-print(lcmm(*range(1, 20)))
+print(lcmm(*range(1,20)))
