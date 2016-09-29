@@ -13,9 +13,7 @@ def threedigitprod(n):
 			return True
 	return False
 
-number = 0
 for i in range(998001,10000,-1):
 	if palindrome(i) and threedigitprod(i):
-		if i > number:
-			number = i
-print(number)
+		print(i)
+		break
