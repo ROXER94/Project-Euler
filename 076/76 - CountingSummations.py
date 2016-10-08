@@ -1,6 +1,6 @@
 # Calculates the number of different ways 100 can be written as a sum of at least two positive integers
 
-def factors(n):
+def Factors(n):
 	factors_array = []
 	for x in range(1, n//2 + 1):
 		if n % x == 0:
@@ -11,7 +11,7 @@ def factors(n):
 cache = {0:1}
 def P(n):
 	if n not in cache:
-		cache[n] = sum(factors(n-k) * P(k) for k in range(n)) // n
+		cache[n] = sum(Factors(n-k) * P(k) for k in range(n)) // n
 	return cache[n]
 
 print(P(100)-1)
