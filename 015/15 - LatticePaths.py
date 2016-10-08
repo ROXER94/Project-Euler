@@ -7,7 +7,7 @@ n = 20
 for i in range(1,n+1):
 	array.append(i)
 
-def matrix(array):
+def Matrix(array):
 	result = [1]
 	for i in array:
 		if array.index(i) != n-1:
@@ -19,7 +19,7 @@ def matrix(array):
 
 j=1
 while j != n:
-	array = matrix(array)
+	array = Matrix(array)
 	j += 1
 print(array[n-1]*2)
 #(40 choose 20)
