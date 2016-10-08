@@ -1,6 +1,6 @@
 # Calculates the smallest member of the longest amicable chain with no element exceeding 1,000,000
 
-def factors(n):
+def Factors(n):
 	array = []
 	for x in range(1, n//2 + 1):
 		if n % x == 0:
@@ -11,7 +11,7 @@ def cycle(n):
 	array = []
 	while n not in array:
 		array.append(n)
-		n = factors(n)
+		n = Factors(n)
 	return min(array)
 
 cache = []
@@ -21,7 +21,7 @@ for i in range(2,6000,2):
 		array = []
 		while i not in array:
 			array.append(i)
-			i = factors(i)
+			i = Factors(i)
 			cache.append(i)
 			if i%2==1 or i > 1000000 or i < 220:
 				array = []
