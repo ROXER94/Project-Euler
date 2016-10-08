@@ -2,7 +2,7 @@
 
 import math
 
-def factors(n):
+def Factors(n):
 	count = 0
 	for x in range(1, math.ceil(n**0.5) + 1):
 		if n % x == 0:
@@ -17,7 +17,7 @@ def triangle(n):
 number = 1
 while True:
 	current = triangle(number)
-	if factors(current) > 500:
+	if Factors(current) > 500:
 		print(current)
 		break
 	number += 1
