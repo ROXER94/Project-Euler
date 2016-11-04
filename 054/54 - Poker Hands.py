@@ -11,7 +11,7 @@ def evaluateHand(array):
 		# Straight Flush
 		if numbers[0] + 4 == numbers[1] + 3 == numbers[2] + 2 == numbers[3] + 1 == numbers[4]:
 			return (9,numbers[-1])
-		# Flush !!
+		# Flush
 		else:
 			return (6,numbers[-1])
 	if len(list(set(numbers))) == 2:
