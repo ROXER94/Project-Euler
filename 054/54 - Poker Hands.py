@@ -7,7 +7,6 @@ def evaluateHand(array):
 		# Royal Flush
 		if str(array[0])[0] in RoyalFlush and str(array[1])[0] in RoyalFlush and str(array[2])[0] in RoyalFlush and str(array[3])[0] in RoyalFlush and str(array[4])[0] in RoyalFlush:
 			return (10,10)
-		numbers = sorted([evaluateDigit(str(array[0])[0]),evaluateDigit(str(array[1])[0]),evaluateDigit(str(array[2])[0]),evaluateDigit(str(array[3])[0]),evaluateDigit(str(array[4])[0])])
 		# Straight Flush
 		if numbers[0] + 4 == numbers[1] + 3 == numbers[2] + 2 == numbers[3] + 1 == numbers[4]:
 			return (9,numbers[-1])
