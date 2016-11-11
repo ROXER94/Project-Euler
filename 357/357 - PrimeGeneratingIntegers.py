@@ -11,7 +11,7 @@ for i in range(2, max):
 	else:
 		primes[i] = False
 
-def factors(n):
+def Factors(n):
 	valid = True
 	for d in range(1, int(n**.5) + 1):
 		if n % d == 0:
@@ -22,4 +22,4 @@ def factors(n):
 				break
 	return valid
 
-print(sum([n for n in range(2,max+1,4) if primes[n+1] and factors(n)]) + 1)
+print(sum([n for n in range(2,max+1,4) if primes[n+1] and Factors(n)]) + 1)
