@@ -1,4 +1,4 @@
-# Calculates the area of the grid contains nearly 2,000,000 rectangles
+# Calculates the area of the grid that contains nearly 2,000,000 rectangles
 
 def rectCount(length,width):
 	return length*width*(length+1)*(width+1)//4
