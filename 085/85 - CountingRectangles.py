@@ -11,4 +11,4 @@ for l in range(1,1000):
 			difference = abs(2000000-current)
 			x = l
 			y = w
-print(x*y)
+print(x*y)z
