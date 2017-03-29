@@ -45,14 +45,8 @@ for a in range(2):
 							for j in binary:
 								if j in value:
 									continue
-								elif j == value[-1]+value[:4]:
-									continue
-								elif j == value[-2:]+value[:3]:
-									continue
-								elif j == value[-3:]+value[:2]:
-									continue
-								elif j == value[-4:]+value[0]:
-									continue
+								elif j in value[-4:]+value[:4]:
+    									continue
 								else:
 									valid = False
 									break
