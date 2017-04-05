@@ -26,7 +26,6 @@ def totient_gen(limit):
 					phi[n*j] = f * phi[q]
 		yield phi[n]
 
-
 totients = [""]+list(totient_gen(int(1.5*max)))[:max]
 
 sum = 0
