@@ -22,6 +22,6 @@ while True:
 		while powermod(10,k,n) != 1:
 			k += 1
 		if k > 1000000:
-			print(n,k)
+			print(n)
 			break
 	n += 2
