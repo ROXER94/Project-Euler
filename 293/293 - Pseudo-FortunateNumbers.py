@@ -1,9 +1,7 @@
 # Calculates the sum of all distinct pseudo-Fortunate numbers for admissible numbers less than 10^9
 
-from time import time
-start = time()
-
 from math import log
+
 max = 10**9
 def primes(n):
 	P = {2:True}
@@ -17,7 +15,6 @@ def primes(n):
 	return P
 
 P = primes(max)
-
 n = max
 array = []
 for a in range(int(log(n,2))+1):
@@ -81,4 +78,3 @@ for N in array:
 			M += 2
 	S.add(M)
 print(sum(S))
-print(time()-start)
