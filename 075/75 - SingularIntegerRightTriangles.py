@@ -6,11 +6,10 @@ count = 0
 for L in range(12,1500001,2):
 	current = 0
 	s = L
-	s2 = s / 2
-	mlimit = s2 ** .5 - 1
-	for m in range(2,int(mlimit+1)+1):
+	s2 = s/2
+	for m in range(2,int(s2**.5)+1):
 		if s2 % m == 0: 
-			sm = s2 / m
+			sm = s2/m
 			while sm % 2 == 0:
 				sm /= 2
 			if m % 2 == 1:
@@ -19,11 +18,11 @@ for L in range(12,1500001,2):
 				k = m + 1
 			while k < 2*m and k <= sm:
 				if sm % k == 0 and gcd(k,m) == 1:
-					d = s2 / (k*m)
+					d = s2//(k*m)
 					n = k-m
-					a = int(d * (m * m - n * n))
-					b = int(2 * d * m * n)
-					c = int(d * (m * m + n * n))
+					a = d * m * m - n * n
+					b = 2 * d * m * n
+					c = d * m * m + n * n
 					current += 1
 				k += 2
 	if current == 1:
