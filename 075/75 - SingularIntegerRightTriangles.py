@@ -18,11 +18,6 @@ for L in range(12,1500001,2):
 				k = m + 1
 			while k < 2*m and k <= sm:
 				if sm % k == 0 and gcd(k,m) == 1:
-					d = s2//(k*m)
-					n = k-m
-					a = d * m * m - n * n
-					b = 2 * d * m * n
-					c = d * m * m + n * n
 					current += 1
 				k += 2
 	if current == 1:
