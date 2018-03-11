@@ -1,4 +1,4 @@
-# Calculates the largest 1 to 9 pandigital 9-digit number that can be formed as the concatenated product of an integer with (1,2,... ,n) where n > 1
+# Calculates the largest 1 to 9 pandigital 9-digit number that can be formed as the concatenated product of an integer with (1,2,...,n) where n > 1
 
 def pandigital(n):
 	total = ""
@@ -11,9 +11,7 @@ def pandigital(n):
 	    return int(total)
 	return 0
 
-max = 0
+Max = 0
 for i in range(9999,9000,-1):
-	current = pandigital(i)
-	if current > max:
-		max = current
-print(max)
+	Max = max(Max,pandigital(i))
+print(Max)
