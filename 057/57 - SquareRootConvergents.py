@@ -4,11 +4,9 @@ count = 0
 n = 3
 d = 2
 iteration = 1
-while iteration != 1001:
+while iteration != 1000:
 	if len(str(n)) > len(str(d)):
 		count += 1
-	n2 = 2*d + n
-	d2 = n + d
-	n,d = n2,d2
+	n,d = 2*d+n,n+d
 	iteration += 1
 print(count)
