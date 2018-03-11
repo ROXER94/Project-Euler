@@ -3,6 +3,7 @@
 RoyalFlush = ["T","J","Q","K","A"]
 def evaluateHand(array):
 	numbers = sorted([evaluateDigit(str(array[0])[0]),evaluateDigit(str(array[1])[0]),evaluateDigit(str(array[2])[0]),evaluateDigit(str(array[3])[0]),evaluateDigit(str(array[4])[0])])
+	# Same Suit
 	if str(array[0])[1] == str(array[1])[1] == str(array[2])[1] == str(array[3])[1] == str(array[4])[1]:
 		# Royal Flush
 		if str(array[0])[0] in RoyalFlush and str(array[1])[0] in RoyalFlush and str(array[2])[0] in RoyalFlush and str(array[3])[0] in RoyalFlush and str(array[4])[0] in RoyalFlush:
