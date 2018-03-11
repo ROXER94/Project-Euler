@@ -1,17 +1,13 @@
 # Calculates the number of Lychrel numbers below 10,000
 
 def isPalindrome(string):
-	if string == string[::-1]:
-		return True
-	else:
-		return False
+	return string == string[::-1]
 
 def Lychrel(string):
 	return int(string) + int(string[::-1])
 
 total = 0
-Range = 10000
-for i in range(Range):
+for i in range(10000):
 	L = True
 	count = 0
 	value = str(i)
