@@ -8,23 +8,19 @@ def fact(n):
 	return cache[n]
 
 def factorial_uncached(n):
-    if n == 0 : return 1
-    else :
-        return n*fact(n-1)
+    if n == 0: return 1
+    else: return n*fact(n-1)
 
 count = 0
 for i in range(1000000):
-	array = []
+	s = set()
 	match = False
 	while not match:
-		array.append(i)
-		value = 0
-		for j in str(i):
-			value += fact(int(j))
-		if value in array:
+		s.add(i)
+		value = sum(fact(int(j)) for j in str(i))
+		if value in s:
 			match = True
 		i = value
-	distance = len(array)
-	if distance == 60:
+	if len(s) == 60:
 		count += 1
 print(count)
