@@ -1,28 +1,15 @@
 # Calculates the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain the same digits
 
 def permute(n):
-	if len(str(2*n)) == len(str(3*n)) == len(str(4*n)) == len(str(5*n)) == len(str(6*n)):
-		double = 2*n
-		triple = 3*n
-		quadruple = 4*n
-		quintuple = 5*n
-		sextuple = 6*n
-		if match(double,triple) and match(triple,quadruple) and match(quadruple,quintuple) and match(quintuple,sextuple):
-			return True
-	return False
+	return len(str(2*n)) == len(str(3*n)) == len(str(4*n)) == len(str(5*n)) == len(str(6*n)) and match(2*n,3*n) and match(3*n,4*n) and match(4*n,5*n) and match(5*n,6*n)
 
 def match(n1,n2):
-    for i in str(n1):
-        if i in str(n2):
-            continue
-        else:
-            return False
-    return True
+    return sorted(str(n1)) == sorted(str(n2))
 
-number = 1
+n = 1
 while True:
-	if permute(number):
-		print(number)
+	if permute(n):
+		print(n)
 		break
 	else:
-		number += 1
+		n += 1
