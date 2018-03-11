@@ -2,40 +2,32 @@
 
 from math import sqrt
 
-def isSquare(integer):
-	root = sqrt(integer)
-	if int(root + 0.5) ** 2 == integer: 
-		return True
-	else:
-		return False
+def isSquare(n):
+	return int(sqrt(n)+.5)**2 == n
 
 cache = {}
 for i in range(1,10001):
 	if not isSquare(i):
 		array = []
 		n = i
-		residue = int(n ** 0.5)
+		residue = int(n**.5)
 		denominator = residue
-		numerator = n - denominator **2
+		numerator = n-denominator**2
 
 		while True:
-			newarray = int((residue+denominator)/numerator)
-			array.append( newarray )    
-			newDenominator = (newarray * numerator) - denominator    
-			newNumerator = (n - newDenominator **2)/numerator
-
-			if newNumerator == 1:
-				break
+			sequence = (residue+denominator)//numerator
+			array.append(sequence)    
+			newDenominator = sequence*numerator-denominator    
+			newNumerator = (n-newDenominator**2)/numerator			
 			denominator = newDenominator
 			numerator = newNumerator
+			
+			if newNumerator == 1:
+				break
 
 		array.append(2*residue)
 		if len(array) == 2 and array[0] == array[1]:
 			del array[0]
 		cache[i] = array
 
-count = 0
-for i in cache.values():
-	if len(i) % 2 != 0:
-		count += 1
-print(count)
+print(sum(1 for i in cache.values() if len(i) % 2 != 0))
