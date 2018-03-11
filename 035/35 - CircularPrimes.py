@@ -33,9 +33,4 @@ array = []
 for i in range(1,1000000):
 	if "2" not in str(i) and "5" not in str(i) and isPrime(i):
 		array.append(i)
-
-count = 0
-for i in array:
-	if isCircularPrime(i):
-		count += 1
-print(count)
+print(sum(1 for i in array if isCircularPrime(i))+2)
