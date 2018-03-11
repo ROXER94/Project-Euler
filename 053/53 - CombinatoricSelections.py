@@ -8,16 +8,10 @@ def fact(n):
 	return cache[n]
 
 def factorial_uncached(n):
-    if n == 0 : return 1
-    else :
-        return n*fact(n-1)
+    if n == 0: return 1
+    else: return n*fact(n-1)
 
 def nCr(n,r):
-	return int(fact(n) / (fact(r) * fact(n-r)))
+	return fact(n)//(fact(r)*fact(n-r))
 
-count = 0	
-for r in range(1,101):
-	for n in range(r,101):
-		if nCr(n,r) > 1000000:
-			count += 1
-print(count)
+print(sum(1 for r in range(1,101) for n in range(r,101) if nCr(n,r) > 1000000))
