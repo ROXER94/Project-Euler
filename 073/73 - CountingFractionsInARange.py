@@ -6,13 +6,13 @@ def FareySequence(n):
 	array = []
 	a = 1
 	b = 3
-	c = int(n/3)
+	c = n//3
 	d = n-1
 	array.append(Fraction(a,b))
 	array.append(Fraction(c,d))
 	while c < n/2:
-		p = int((n+b)/d)*c-a
-		q = int((n+b)/d)*d-b
+		p = (n+b)//d*c-a
+		q = (n+b)//d*d-b
 		array.append(Fraction(p,q))
 		a = c
 		b = d
@@ -22,4 +22,4 @@ def FareySequence(n):
 
 n = 12000
 array = FareySequence(n)
-print(array.index(Fraction(int(n/2-1),n-1))-array.index(Fraction(1,3)))
+print(array.index(Fraction(1,2))-array.index(Fraction(1,3))-1)
