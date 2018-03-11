@@ -2,4 +2,4 @@
 
 From [Project Euler: Problem 7](https://projecteuler.net/problem=7)
 
-Calculates 10,001st prime number
+Calculates the 10,001st prime number
