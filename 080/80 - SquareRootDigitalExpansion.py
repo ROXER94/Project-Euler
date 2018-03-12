@@ -4,12 +4,8 @@ from decimal import *
 from math import sqrt
 getcontext().prec = 102
 
-def isSquare(integer):
-    root = sqrt(integer)
-    if int(root + 0.5) ** 2 == integer: 
-        return True
-    else:
-        return False
+def isSquare(n):
+    return int(sqrt(n)+.5)**2 == n
 
 total = 0
 for i in range(1,101):
