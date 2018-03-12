@@ -2,25 +2,23 @@
 
 max = 100
 primes = []
+P = {}
 sieve = [True] * max
 for i in range(2, max):
 	if sieve[i]:
 		primes.append(i)
+		P[len(primes)] = i
 		for j in range(i * i, max, i):
 			sieve[j] = False
 
-cache = {}
-for p in primes:
-	cache[len(primes)+1] = p
-
-n = 1
-result = 1
+n = 0
+result = 0
 while result <= 5000:
 	n += 1
 	ways = [0] * (n+1)
 	ways[0] = 1
-	for i in range(1,len(cache)+1):
-		for j in range(cache[i],n+1):
-			ways[j] = ways [j] + ways [j-cache[i]]
+	for i in range(1,len(P)+1):
+		for j in range(P[i],n+1):
+			ways[j] = ways [j] + ways[j-P[i]]
 	result = ways[n]
 print(n)
