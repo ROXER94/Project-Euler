@@ -7,11 +7,8 @@ def chain(n):
 		cache[n] = chain_uncached(n)
 	return cache[n]
 
-
 def chain_uncached(n):
-	s = 0
-	for i in str(n):
-		s += int(i)**2
+	s = sum(int(i)**2 for i in str(n))
 	if s == 89:
 		return True
 	elif s == 1:
@@ -19,8 +16,4 @@ def chain_uncached(n):
 	else:
 		return chain(s)
 
-count = 0
-for i in range(1,10000000):
-	if chain(i):
-		count += 1
-print(count)
+print(sum(1 for i in range(1,10000000) if chain(i)))
