@@ -2,14 +2,12 @@
 
 def Factors(n):
 	count = 0
-	for x in range(1, int(n**0.5) + 1):
+	for x in range(1, int(n**.5) + 1):
 		if n % x == 0:
 			count += 2
 	return count - 1
 
 n = 10
-while True:
-	if Factors(n**2) > 2000:
-		print(n)
-		break
+while Factors(n**2) < 2000:
 	n += 10
+print(n)
