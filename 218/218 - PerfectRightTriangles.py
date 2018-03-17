@@ -14,9 +14,8 @@ def mm(A,B):
 		array.append(temp)
 	return array
 
-def isSquare(integer):
-	root = sqrt(integer)
-	return int(root + 0.5) ** 2 == integer
+def isSquare(n):
+	return int(sqrt(n + .5) ** 2 == n
 
 A = [[1,-2,2],[2,-1,2],[2,-2,3]]
 B = [[1,2,2],[2,1,2],[2,2,3]]
@@ -30,10 +29,9 @@ def primitive(array):
 		b = mm(B,array)
 		c = mm(C,array)
 		area = array[0] * array[1] // 2
-		if isSquare(array[2]) and area%84 != 0:
+		if isSquare(array[2]) and area % 84 != 0:
 			return 1 + primitive(a) + primitive(b) + primitive(c)
-		else:
-			return primitive(a) + primitive(b) + primitive(c)
+		return primitive(a) + primitive(b) + primitive(c)
 
 limit = 10**16**(1/2)
 print(primitive([3,4,5]))
