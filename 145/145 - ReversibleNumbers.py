@@ -8,9 +8,4 @@ def Reverse(n):
 		return False
 	return True
 
-count = 0
-for i in range(1,100000000):
-	if Reverse(i):
-		count += 1
-
-print(count)
+print(sum(1 for i in range(1,100000000) if Reverse(i)))
