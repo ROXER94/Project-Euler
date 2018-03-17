@@ -13,8 +13,8 @@ for i in range(1,101):
 odds = [n for n in range(27,6670,2)]
 
 count = 0
-divide = False
 for o in odds:
+	divide = False
 	for n in cache.values():
 		if n%o == 0:
 			divide = True
@@ -23,5 +23,4 @@ for o in odds:
 		count += 1
 	if count == 124:
 		break
-	divide = False
 print(o)
