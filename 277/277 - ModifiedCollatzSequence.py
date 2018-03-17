@@ -16,17 +16,17 @@ while True:
 	for i in string:
 		if i =="D":
 			n = D(n)
-			if n%1!=0:
+			if n % 1 != 0:
 				break
 		elif i == "U":
 			n = U(n)
-			if n%1!=0:
+			if n % 1 != 0:
 				break
 		else:
 			n = d(n)
-			if n%1!=0:
+			if n % 1 != 0:
 				break
-	if n%1==0 and n > 10**15:
+	if n % 1==0 and n > 10**15:
 		break
 	n = original+69
 print(int(n))
