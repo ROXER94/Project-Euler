@@ -5,7 +5,7 @@ def right(x1,y1,x2,y2,x3,y3):
 	s2 = distance(x2,y2,x3,y3)
 	s3 = distance(x1,y1,x3,y3)
 	array = sorted([s1,s2,s3])
-	return -.001 < array[0]**2 + array[1]**2 - array[2]**2 < .001
+	return round(array[0]**2 + array[1]**2,1) == round(array[2]**2,1)
 
 def distance(x1,y1,x2,y2):
 	return ((x2-x1) ** 2 + (y2-y1) ** 2) ** .5
