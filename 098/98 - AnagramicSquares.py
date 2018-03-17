@@ -45,14 +45,14 @@ for i in range(len(squares6)-1):
 
 anagramicSquares = []
 for i in anagrams:
-	if int(len(i[0]+i[1])/2) == 3:
+	if len(i[0]+i[1])//2 == 3:
 		a = i[1].index(i[0][0])
 		b = i[1].index(i[0][1])
 		c = i[1].index(i[0][2])
 		for j in squares3anagrams:
 			if a == str(j[1]).index(str(j[0])[0]) and b == str(j[1]).index(str(j[0])[1]) and c == str(j[1]).index(str(j[0])[2]):
 				anagramicSquares.append(j[1])
-	if int(len(i[0]+i[1])/2) == 4:
+	if len(i[0]+i[1])//2 == 4:
 		a = i[1].index(i[0][0])
 		b = i[1].index(i[0][1])
 		c = i[1].index(i[0][2])
@@ -60,7 +60,7 @@ for i in anagrams:
 		for j in squares4anagrams:
 			if a == str(j[1]).index(str(j[0])[0]) and b == str(j[1]).index(str(j[0])[1]) and c == str(j[1]).index(str(j[0])[2]) and d == str(j[1]).index(str(j[0])[3]):
 				anagramicSquares.append(j[1])
-	if int(len(i[0]+i[1])/2) == 5:
+	if len(i[0]+i[1])//2 == 5:
 		a = i[1].index(i[0][0])
 		b = i[1].index(i[0][1])
 		c = i[1].index(i[0][2])
@@ -69,7 +69,7 @@ for i in anagrams:
 		for j in squares5anagrams:
 			if a == str(j[1]).index(str(j[0])[0]) and b == str(j[1]).index(str(j[0])[1]) and c == str(j[1]).index(str(j[0])[2]) and d == str(j[1]).index(str(j[0])[3]) and e == str(j[1]).index(str(j[0])[4]):
 				anagramicSquares.append(j[1])
-	if int(len(i[0]+i[1])/2) == 6:
+	if len(i[0]+i[1])//2 == 6:
 		a = i[1].index(i[0][0])
 		b = i[1].index(i[0][1])
 		c = i[1].index(i[0][2])
