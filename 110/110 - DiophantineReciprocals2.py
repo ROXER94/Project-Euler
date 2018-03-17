@@ -32,7 +32,7 @@ for a in range(10):
 					if current > limit:
 						break
 					elif current > n:
-						limit = 3**a * 5**b * 7**c * 9**d * 11**e
+						limit = current
 						e1,e2,e3,e4,e5 = a,b,c,d,e
 
 array = [e1,e2,e3,e4,e5][::-1]
