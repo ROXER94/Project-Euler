@@ -2,11 +2,7 @@
 
 array = [n**2 for n in range(1,7075)]
 
-squarePalindromes = []
-for i in array:
-	if str(i) == str(i)[::-1]:
-		squarePalindromes.append(i)
-
+squarePalindromes = [i for i in array if str(i) == str(i)[::-1]]
 palindromes = []
 index = 0
 while index != len(array):
@@ -18,7 +14,4 @@ while index != len(array):
 				palindromes.append(value)
 	index += 1
 
-total = sum(list(set(palindromes)))
-for i in squarePalindromes:
-	total -= i
-print(total)
+print(sum(list(set(palindromes)))-sum(squarePalindromes))
