@@ -3,77 +3,47 @@
 from itertools import permutations
 
 def RPN(array):
-    newarray = []
-    for i in array:
-        if i == "+":
-            newarray.append(newarray[-1] + newarray[-2])
-            del newarray[-2]
-            del newarray[-2]
-        elif i == "-":
-            newarray.append(newarray[-1] - newarray[-2])
-            del newarray[-2]
-            del newarray[-2]
-        elif i == "*":
-            newarray.append(newarray[-1] * newarray[-2])
-            del newarray[-2]
-            del newarray[-2]
-        elif i == "/":
-            newarray.append(newarray[-1] / newarray[-2])
-            del newarray[-2]
-            del newarray[-2]
-        else:
-            newarray.append(i)
-    return newarray[0]
-    
-def f(array):
-	newarray = []
-	for i in list(permutations(array)):
-		try:
-			value = RPN(i)
-			if value%1==0 and value > 0:
-				newarray.append(value)
-		except IndexError:
-			continue
-		except ZeroDivisionError:
-			continue
-	return newarray
+	s = []
+	for i in array:
+		if i == "+":
+			s.append(s.pop() + s.pop())
+		elif i == "-":
+			s.append(s.pop() - s.pop())
+		elif i == "*":
+			s.append(s.pop() * s.pop())
+		elif i == "/":
+			s.append(s.pop() / s.pop())
+		else:
+			s.append(i)
+	return s[0]
 
-consecutive = 0
-n = 10
-for a in range(1,n):
-	for b in range(a+1,n):
-		for c in range(b+1,n):
-			for d in range(c+1,n):
-				array = []
-				array.append(RPN([a,b,c,d,"+","+","+"]))
-				array.append(RPN([a,b,c,d,"*","*","*"]))
-				array += f([a,b,c,d,"-","+","+"])
-				array += f([a,b,c,d,"*","+","+"])
-				array += f([a,b,c,d,"/","+","+"])
-				array += f([a,b,c,d,"-","*","*"])
-				array += f([a,b,c,d,"+","*","*"])
-				array += f([a,b,c,d,"/","*","*"])
-				array += f([a,b,c,d,"+","-","-"])
-				array += f([a,b,c,d,"*","-","-"])
-				array += f([a,b,c,d,"/","-","-"])
-				array += f([a,b,c,d,"-","/","/"])
-				array += f([a,b,c,d,"*","/","/"])
-				array += f([a,b,c,d,"+","/","/"])
-				array += f([a,b,c,d,"-","*","+"])
-				array += f([a,b,c,d,"-","/","+"])
-				array += f([a,b,c,d,"+","*","/"])
-				array += f([a,b,c,d,"-","*","/"])
-				array = sorted(list(set(array)))
-				count = 0
-				for i in range(len(array)):
-					if array[i] + 1 == array[i+1]:
-						count += 1
+limit = 10
+maximum = 0
+for a in range(1,limit):
+	for b in range(a+1,limit):
+		for c in range(b+1,limit):
+			for d in range(c+1,limit):
+				rpn = set()
+				for op1 in ["+","-","*","/"]:
+					for op2 in ["+","-","*","/"]:
+						for op3 in ["+","-","*","/"]:
+							for i in permutations([a,b,c,d]):
+								try:
+									rpn.add(RPN([i[0],i[1],i[2],op1,i[3],op2,op3]))
+								except:
+									continue
+								try:
+									rpn.add(RPN([i[0],i[1],i[2],i[3],op1,op2,op3]))
+								except:
+									continue
+				rpn = sorted([int(i) for i in rpn if float(i) > 0 and float(i) % 1 == 0])
+				current = 0
+				for i in range(len(rpn)):
+					if rpn[i]+1 == rpn[i+1]:
+						current += 1
 					else:
 						break
-				if count > consecutive:
-					consecutive = count
-					w = a
-					x = b
-					y = c
-					z = d
-print(str(w)+str(x)+str(y)+str(z))
+				if current > maximum:
+					maximum = current
+					value = 1000*a + 100*b + 10*c + d
+print(value)
