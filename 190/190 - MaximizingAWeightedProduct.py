@@ -3,4 +3,4 @@
 from functools import reduce
 from operator import mul
 
-print(sum(int(reduce(mul,[(2*i*n/(n*(n+1)))**i for i in range(1,n+1)],1)) for n in range(2,16)))
+print(sum(int(reduce(mul,[(2*i*m/(m*(m+1)))**i for i in range(1,m+1)],1)) for m in range(2,16)))
