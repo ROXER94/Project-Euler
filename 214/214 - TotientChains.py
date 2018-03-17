@@ -1,5 +1,21 @@
 # Calculates the sum of all primes less than 40,000,000 which generate a totient chain of length 25
 
+def totients(n):
+	phi = [0]*(n+1)
+	phi[1] = 1
+	for i in range(1,n+1):
+		if phi[i] == 0:
+			phi[i] = i - 1
+			for j in range(2,n//i+1):
+				if phi[j] != 0:
+					q = j
+					f = i - 1
+					while q % i == 0:
+						f *= i
+						q //= i
+					phi[i*j] = f * phi[q]
+		yield phi[i]
+
 max = 40000000
 primes = []
 sieve = [True] * max
@@ -9,31 +25,13 @@ for i in range(2, max):
 		for j in range(i * i, max, i):
 			sieve[j] = False
 
-def totient_gen(limit):
-	phi = (limit+1)*[0]
-	phi[1] = 1
-	yield 1
-	for n in range(2,limit):
-		if phi[n] == 0:
-			phi[n] = n - 1
-			for j in range(2,int(limit/n)):
-				if phi[j] != 0:
-					q = j
-					f = n - 1
-					while q % n == 0:
-						f *= n
-						q //= n
-					phi[n*j] = f * phi[q]
-		yield phi[n]
-
-totients = [""]+list(totient_gen(int(1.5*max)))[:max]
-
 sum = 0
+phi = list(totients(max))
 for p in primes:
 	current = p
 	chain = 1
 	while current != 1:
-		current = totients[current]
+		current = phi[current]
 		chain += 1
 	if chain == 25:
 		sum += p
