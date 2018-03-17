@@ -26,7 +26,7 @@ while True:
 			n = d(n)
 			if n % 1 != 0:
 				break
-	if n % 1==0 and n > 10**15:
+	if n % 1 == 0 and n > 10**15:
 		break
 	n = original+69
 print(int(n))
