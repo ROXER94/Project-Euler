@@ -1,7 +1,7 @@
 # Calculates the smallest number greater than 10^15 that has a specific modified Collatz sequence
 
 def D(n):
-	return n*3
+	return 3*n
 
 def U(n):
 	return (3*n-2)/4
@@ -22,7 +22,7 @@ while True:
 			n = U(n)
 			if n%1!=0:
 				break
-		elif i == "d":
+		else:
 			n = d(n)
 			if n%1!=0:
 				break
