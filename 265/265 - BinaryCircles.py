@@ -1,12 +1,8 @@
 # Calculates the sum of all unique De Bruijn sequences of length 32
 
 binary = []
-for a in range(2):
-	for b in range(2):
-		for c in range(2):
-			for d in range(2):
-				for e in range(2):
-					binary.append(str(a)+str(b)+str(c)+str(d)+str(e))
+for i in range(32):
+	binary.append(bin(i)[2:].zfill(5))
 
 sum = 0
 array = []
