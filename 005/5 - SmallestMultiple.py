@@ -1,6 +1,6 @@
 # Calculates the smallest positive number that is evenly divisible by all numbers from 1 to 20
 
-from fractions import gcd
+from math import gcd
 from functools import reduce
 
 # Return lowest common denominator of two numbers
