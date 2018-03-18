@@ -1,8 +1,15 @@
-# Calculates the sum of S(p) for primes between 5 and 100,000,000
+# Calculates the sum of all positive integers n below 100,000,000 such that the sum of each pair of factors of n is prime
 
-def S(p):
-	q = p // 2
-	return (p * (p - 1) - q * (q - 1)) // 2 % p
+def egcd(a, b):
+    if a == 0:
+        return (b,0,1)
+    else:
+        g, y, x = egcd(b%a,a)
+        return (g,x-(b//a)*y,y)
+
+def ModInverse(a, m):
+	g,x,y = egcd(a,m)
+	return x % m
 
 max = 100000000
 primes = []
@@ -12,4 +19,10 @@ for i in range(2, max):
 		primes.append(i)
 		for j in range(i * i, max, i):
 			sieve[j] = False
-print(sum(S(p) for p in primes[2:]))
+primes.remove(2)
+primes.remove(3)
+Sum = 0
+for p in primes:
+	modInv = -3 * ModInverse(8,p)
+	Sum += modInv - p*(modInv//p)
+print(Sum)
