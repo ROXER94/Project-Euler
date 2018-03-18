@@ -2,8 +2,8 @@
 
 from math import sqrt
 
-def isSquare(integer):
-    return int(sqrt(integer) + 0.5) ** 2 == integer
+def isSquare(n):
+    return int(sqrt(n)+.5)**2 == n
 
 n = 64000000
 sum = 0
