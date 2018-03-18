@@ -14,13 +14,13 @@ for i in range(2, maximum):
 
 def M(p,q):
 	Range = int(log(N/q,p)) + 1
-	array = [0]
+	current = 0
 	for i in range(1,Range):
 		for j in range(1,Range):
 			value = p**i*q**j
-			if value <= N and value > array[0]:
-				array[0] = value
-	return array[0]
+			if value <= N and value > current:
+				current = value
+	return current
 
 sum = 0
 for p in primes:
