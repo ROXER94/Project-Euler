@@ -3,15 +3,13 @@
 cache_fib = {}
 
 def fib(n):
-    if n not in cache_fib.keys():
-        cache_fib[n] = fibonacci_uncached(n)
-    return cache_fib[n]
+	if n not in cache_fib.keys():
+		cache_fib[n] = fibonacci_uncached(n)
+	return cache_fib[n]
 
 def fibonacci_uncached(n):
-    if n < 2:
-        return n
-    else:
-        return fib(n-1) + fib(n-2)
+	if n < 2: return n
+	else: return fib(n-1) + fib(n-2)
 
 number = 0
 while len(str(fib(number))) < 1000:
