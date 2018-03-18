@@ -2,9 +2,8 @@
 
 from math import sqrt
 
-def isSquare(integer):
-    root = sqrt(integer)
-    return int(root + 0.5) ** 2 == integer
+def isSquare(n):
+    return int(sqrt(n)+.5)**2 == n
 
 max = 2000
 primes = []
