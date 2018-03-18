@@ -15,7 +15,7 @@ def mm(A,B):
 	return array
 
 def isSquare(n):
-	return int(sqrt(n + .5) ** 2 == n
+    return int(sqrt(n)+.5)**2 == n
 
 A = [[1,-2,2],[2,-1,2],[2,-2,3]]
 B = [[1,2,2],[2,1,2],[2,2,3]]
