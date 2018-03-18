@@ -1,18 +1,27 @@
 # Calculates the product of the coefficients, a and b, for the quadratic expression n^2+a*n+b that produces the maximum number of primes for consecutive values of n, starting with n=0
 
 def isPrime(n):
-    if n < 2:
-        return False
-    if n == 2: 
-        return True    
-    if not n & 1: 
-        return False
-    for x in range(3, int(n**0.5) + 1, 2):
-        if n % x == 0:
-            return False
-    return True
+	if n <= 1:
+		return False
+	if n <= 3:
+		return True
+	if n % 2 == 0 or n % 3 == 0:
+		return False
+	i = 5
+	while i * i <= n:
+		if n % i == 0 or n % (i + 2) == 0:
+			return False
+		i += 6
+	return True
 
-primes = [2] + [p for p in range(3,1001,2) if isPrime(p)]
+max = 1000
+primes = []
+sieve = [True] * max
+for i in range(2, max):
+	if sieve[i]:
+		primes.append(i)
+		for j in range(i * i, max, i):
+			sieve[j] = False
 	
 max = 0
 for a in range(1,1000,2):
