@@ -6,13 +6,14 @@ def isSquare(n):
     return int(sqrt(n)+.5)**2 == n
 
 max = 2000
-primes = []
+P = {1:False}
 sieve = [True] * max
 for i in range(2, max):
 	if sieve[i]:
-		primes.append(i)
+		P[i] = True
 		for j in range(i * i, max, i):
 			sieve[j] = False
+			P[j] = False
 
 squares = {}
 for i in range(1,6000):
@@ -21,7 +22,7 @@ for i in range(1,6000):
 cache = {}
 count = 2
 for n in range(1,2000):
-	if n not in primes:
+	if not P[n]:
 		current = 0
 		for a in range(1,n+1):
 			for b in range(a,n+1):
