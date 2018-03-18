@@ -13,4 +13,4 @@ def fibonacci_uncached(n):
     else:
         return fib(n-1) + fib(n-2)
 
-print(sum([fib(x) for x in range(1,10000) if fib(x) < 4000000 and fib(x)%2==0]))
+print(sum(fib(x) for x in range(1,10000) if fib(x) < 4000000 and fib(x)%2==0))
