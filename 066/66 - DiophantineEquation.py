@@ -3,12 +3,8 @@
 from math import sqrt
 from fractions import Fraction
 
-def isSquare(integer):
-	root = sqrt(integer)
-	if int(root + 0.5) ** 2 == integer: 
-		return True
-	else:
-		return False
+def isSquare(n):
+    return int(sqrt(n)+.5)**2 == n
 
 def continuedFraction(array):
 	if len(array) != 2:
