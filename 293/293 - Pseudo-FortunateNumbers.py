@@ -32,7 +32,7 @@ for i in range(2, max):
 		primes.append(i)
 		for j in range(i * i, max, i):
 			sieve[j] = False
-S = set()
+set = set()
 Admissable(0,1)
 for i in admissible:
 	j = 3
@@ -40,5 +40,5 @@ for i in admissible:
 		if isPrime(i+j):
 			break
 		j += 2
-	S.add(j)
-print(sum(S))
+	set.add(j)
+print(sum(set))
