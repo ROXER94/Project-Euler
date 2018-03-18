@@ -8,10 +8,8 @@ def fact(n):
 	return cache[n]
 
 def factorial_uncached(n):
-	if n == 0 :
-		return 1
-	else:
-		return n*fact(n-1)
+	if n == 0: return 1
+	else: return n*fact(n-1)
 
 def nCr(n,r):
 	return int(fact(n) / (fact(r) * fact(n-r)))
@@ -23,14 +21,14 @@ def Pascal(n,r):
 def isSquarefree(n):
 	primesSquared = [x*x for x in [2, 3, 5, 7]]
 	for i in primesSquared:
-		if n%i==0:
+		if n % i == 0:
 			return False
 	return True
 
 n = 51
-array = []
+set = set()
 for i in range(2,n):
 	for j in range(1,i):
-		array.append(Pascal(i,j))
+		set.add(Pascal(i,j))
 
-print(sum(i for i in list(set(array)) if isSquarefree(i)) + 1)
+print(sum(i for i in set if isSquarefree(i)) + 1)
