@@ -6,8 +6,7 @@ def continuedFraction(r):
 	i = r.numerator // r.denominator
 	f = r - i
 	array.append(i)
-	if f == 0:
-		return
+	if f == 0: return
 	continuedFraction(Fraction(1,f))
 
 array = []
