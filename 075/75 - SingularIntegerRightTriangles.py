@@ -1,6 +1,6 @@
 # Calculates the number of values of L ≤ 1,500,000 as a perimeter for which exactly one integer sided right angle triangle can be formed
 
-from fractions import gcd
+from math import gcd
 
 count = 0
 for L in range(12,1500001,2):
