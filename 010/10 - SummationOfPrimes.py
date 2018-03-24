@@ -8,5 +8,4 @@ for i in range(2, max):
 		primes.append(i)
 		for j in range(i * i, max, i):
 			sieve[j] = False
-
 print(sum(primes))
