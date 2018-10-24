@@ -14,8 +14,8 @@ for side1 in range(0,5):
 
 for i in range(0,len(array)-1):
 	for j in range(i+1,len(array)):
-		die1 = array[i][:]
-		die2 = array[j][:]
+		die1 = array[i]
+		die2 = array[j]
 		if 6 in die1 and 9 not in die1:
 			die1.append(9)
 		elif 9 in die1 and 6 not in die1:
