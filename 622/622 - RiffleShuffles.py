@@ -1,6 +1,5 @@
-# Calculates the sum of all values of n that satisfy s(n)=60
-
 from math import gcd,sqrt
+from itertools import product
 
 def Factors(n):
 	factors = set()
@@ -22,4 +21,4 @@ def MultiplicativeOrder(a,n):
 		k += 1
 	return -1
 
-print(sum(i+1 for i in Factors(2**60-1) if MultiplicativeOrder(2,i) == 60))
+print(sum(i+1 for i in sorted(set([x*y for x,y in product(Factors(2**30+1),Factors(2**30-1))])) if MultiplicativeOrder(2,i) == 60))
