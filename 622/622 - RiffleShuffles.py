@@ -1,3 +1,5 @@
+# Calculates the sum of all values of n that satisfy s(n) = 60
+
 from math import gcd,sqrt
 from itertools import product
 
