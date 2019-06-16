@@ -21,6 +21,7 @@ for i in range(2, max):
 			sieve[j] = False
 primes.remove(2)
 primes.remove(3)
+
 Sum = 0
 for p in primes:
 	modInv = -3 * ModInverse(8,p)
