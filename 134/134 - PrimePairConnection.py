@@ -18,7 +18,7 @@ def ModInverse(a, m):
 	else:
 		return x%m
 
-def ChineseRemainderTheorem(relativePrimes,remainders):
+def ChineseRemainderTheorem(relativePrimes, remainders):
 	assert len(relativePrimes) > 1,\
 		"Length of array of relative primes must be greater than one"
 	assert max([gcd(i,j) for i in relativePrimes for j in relativePrimes[relativePrimes.index(i)+1:]]) == 1,\
