@@ -18,17 +18,17 @@ def ModInverse(a, m):
 	else:
 		return x%m
 
-def ChineseRemainderTheorem(relativePrimes,solutions):
+def ChineseRemainderTheorem(relativePrimes,remainders):
 	assert len(relativePrimes) > 1,\
 		"Length of array of relative primes must be greater than one"
 	assert max([gcd(i,j) for i in relativePrimes for j in relativePrimes[relativePrimes.index(i)+1:]]) == 1,\
 		"Array of relative primes is not a collection of pairwise relatively prime integers"
-	assert len(relativePrimes) == len(solutions),\
-		"Array of relative primes and array of solutions are not the same length"
+	assert len(relativePrimes) == len(remainders),\
+		"Array of relative primes and array of remainders are not the same length"
 	M = reduce(mul,relativePrimes,1)
 	M_array = [M//i for i in relativePrimes]
 	y_array = [ModInverse(M_array[relativePrimes.index(i)]%i,i) for i in relativePrimes]
-	return sum([i*j*k for i,j,k in zip(solutions,M_array,y_array)])%M
+	return sum([i*j*k for i,j,k in zip(remainders,M_array,y_array)])%M
 
 Max = 1000004
 primes = []
