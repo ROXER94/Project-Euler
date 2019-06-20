@@ -23,4 +23,4 @@ def MultiplicativeOrder(a,n):
 		k += 1
 	return -1
 
-print(sum(i+1 for i in sorted(set([x*y for x,y in product(Factors(2**30+1),Factors(2**30-1))])) if MultiplicativeOrder(2,i) == 60))
+print(sum(i+1 for i in set([x*y for x,y in product(Factors(2**30+1),Factors(2**30-1))]) if MultiplicativeOrder(2,i) == 60))
