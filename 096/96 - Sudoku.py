@@ -66,8 +66,8 @@ def updateAntiboard(board):
 			if thisNumber is not empty:
 				removeRowNumber(thisNumber,thisRowIndex)
 				removeColNumber(thisNumber,thisColIndex)
-				antiboard[thisRowIndex][thisColIndex] = []
 				removeBlockNumber(thisNumber,thisRowIndex,thisColIndex)
+				antiboard[thisRowIndex][thisColIndex] = []
 	for thisRowIndex,thisRow in enumerate(antiboard):
 		for thisColIndex,i in enumerate(thisRow):
 			if len(i) == 1:
