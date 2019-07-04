@@ -1,4 +1,4 @@
-# Calculates the sum of all amicable numbers under 10000
+# Calculates the sum of all amicable numbers under 10,000
 
 def properfactors(n):
 	factors_array = []
