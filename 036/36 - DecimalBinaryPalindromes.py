@@ -4,7 +4,6 @@
 def palindrome(n):
     return str(n) == str(n)[::-1]
 
-numbers = [i for i in range(1,1000000)]
-palindromes = [i for i in numbers if palindrome(i)]
+palindromes = [i for i in range(1,1000000) if palindrome(i)]
 binary = [int(bin(i)[2:]) for i in palindromes]
 print(sum([int(str(i),2) for i in [j for j in binary if palindrome(j)]]))
