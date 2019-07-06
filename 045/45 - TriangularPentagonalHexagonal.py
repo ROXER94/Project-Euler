@@ -1,11 +1,7 @@
-# Calculates the next Triangle, Pentagonal, and Hexagonal number after 40755
-
-def triangle(n):
-	return n*(n+1)//2
+# Calculates the next Triangle, Pentagonal, and Hexagonal number after 40,755
 
 def pentagonal(n):
 	return n*(3*n-1)//2
-# Every pentagonal number is also a triangle number
 
 def hexagonal(n):
 	return n*(2*n-1)
